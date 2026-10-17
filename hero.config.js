@@ -3,7 +3,7 @@
 window.HERO_CONFIG = {
   "demo": false,
   "template": "chrome-cut",
-  "templateVersion": "v-d08124d509",
+  "templateVersion": "v-786335f44b",
   "name": "ФОРМА",
   "nameCase": "upper",
   "nameLines": null,
