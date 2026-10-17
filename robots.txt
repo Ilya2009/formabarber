@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://formabarber.ru/sitemap.xml
+Sitemap: https://formabarbershop.ru/sitemap.xml
