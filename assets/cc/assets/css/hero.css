@@ -772,6 +772,18 @@ a { color: inherit; }
   .cursor-ring { transition-duration: 1ms; }
 }
 
+/* 2026-10-17 (iPhone, slow network): the CTA row is in the HTML, but the nav, the title and the
+   texts around it are written by hero.js. Until hero.js has done its first layout pass the text
+   column would show a lone CTA at the top that then jumps down when the nav and the title arrive.
+   Keep the text layer invisible until that first pass (hero.js sets data-laid on .hero); the wall
+   and the pole poster stay visible. visibility only: geometry and measurement are unaffected. */
+.hero:not([data-laid]) .lane,
+.hero:not([data-laid]) .outline-sign,
+.hero:not([data-laid]) .stacked-sign,
+.hero:not([data-laid]) .side-slogans {
+  visibility: hidden;
+}
+
 /* ---------- stacked (mobile) layout ---------- */
 
 .hero[data-layout="stacked"] {

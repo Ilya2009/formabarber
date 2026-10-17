@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ru" data-template="chrome-cut" data-template-version="v-786335f44b">
+<html lang="ru" data-template="chrome-cut" data-template-version="v-7c53762b90">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -63,6 +63,13 @@ if (location.protocol !== "file:") {
 </head>
 <body>
 <main class="hero" id="hero">
+<script>
+/* 2026-10-17 (iPhone: wide layout for seconds before the phone layout): hero.js used to write
+   data-layout only after document.fonts.ready, so until then the hero had no data-layout and
+   rendered the base (wide) rules. Set it here, synchronously, before any hero child is parsed.
+   The query must stay identical to mqWide in assets/js/hero.js. */
+document.getElementById("hero").setAttribute("data-layout", window.matchMedia("(min-width:900px) and (min-aspect-ratio:6/5)").matches ? "wide" : "stacked");
+</script>
 
   <div class="wall" id="wall" aria-hidden="true">
     <div class="wall__bounce" id="wallBounce"></div>
